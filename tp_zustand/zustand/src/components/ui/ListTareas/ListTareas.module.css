@@ -1,0 +1,50 @@
+.containerPrincipal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10vh;
+}
+.titleAndButton{
+    width: 20vw;
+    height: 40vh;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 1vw; 
+    padding: 10px;
+    
+}
+.titleAndButton h2 {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+    color: orange;
+    font-size: 30px;
+}
+.titleAndButton button {
+    color: white;
+    border: white solid 2px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: orange;
+    font-size: 16px; 
+    transition: all 0.3s ;
+    cursor: pointer;
+}
+.containerTask{
+    width: 20vw;
+    border: 4px solid orange;
+    box-shadow: 5px 5px 50px;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: white;
+    display: flex; 
+    flex-direction: column; 
+    gap: 30px; 
+    margin-left: 1vw;
+    margin-bottom: 5px;
+}
+.titleAndButton button:hover {
+    color: orange; 
+    background-color: white; 
+    border-color: orange; 
+}

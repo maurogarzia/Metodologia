@@ -1,0 +1,11 @@
+.containerHeader{
+    width: 100vw;
+    height: 8vh;
+    background: rgb(255, 115, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}

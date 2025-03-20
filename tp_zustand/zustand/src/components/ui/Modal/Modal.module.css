@@ -1,0 +1,69 @@
+.containerModalPrincipal{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: brightness(90%) blur(2px);
+}
+.containerPopUp{
+    background-color: white;
+    border: 5px solid orangered;
+    padding: 20px;
+    box-shadow: 5px 5px 15px;
+    border-radius: 10px;
+    width: 30vw;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+.containerTitle{
+    padding: 10px;
+    color: orange;
+}
+.containerTitle h3{
+    font-size: 18px;
+    border: 2px solid orangered;
+    padding: 10px;
+    border-radius: 5px;
+}
+.containerForm{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    gap: 5vh;
+    align-items: center;
+}
+.camposForm{
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+.camposForm input{
+    width: 20vw;
+    height: 4vh;
+}
+.containerFormButton{
+    display: flex;
+    gap: 7vw;
+}
+.containerFormButton button{
+    width: 8vw;
+    height: 4vh;
+    background-color: white;
+    border: 2px solid orangered;
+    color: orangered;
+    cursor: pointer;
+    transition: all 0.3s ;
+}
+
+.containerFormButton button:hover{
+    background-color: orange;
+    border: 2px solid orangered;
+    color: white;
+}
