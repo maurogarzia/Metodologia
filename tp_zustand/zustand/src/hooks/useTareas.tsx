@@ -42,28 +42,34 @@ const useTareas = () => {
             }
         }
 
-        const deleteTask = async(idTarea: string) =>{
-            const estadoPrevio = tareas.find((el)=>el.id === idTarea)
-            eliminarUnaTarea(idTarea)
+        const deleteTask = async (idTarea: string) => {
+            const estadoPrevio = tareas.find((el) => el.id === idTarea); 
+        
             try {
-                await eliminarTarea(idTarea)
+                
                 const confirm = await Swal.fire({
-                    title: "Estas seguro?",
-                    text: "Esta accion no se puede deshacer",
+                    title: "¿Estás seguro?",
+                    text: "Esta acción no se puede deshacer.",
                     icon: "warning",
                     showCancelButton: true,
-                    confirmButtonText: "Si, eliminar",
+                    confirmButtonText: "Sí, eliminar",
                     cancelButtonText: "Cancelar",
-                })
-                if(!confirm.isConfirmed){
-                    return
-                } 
-            } catch (error) {
-                if (estadoPrevio) agregarNuevaTarea(estadoPrevio)
-                console.log("Algo salio mal al eliminar una tarea");
+                });
+        
+                if (!confirm.isConfirmed) {
+                    return; 
+                }
+        
                 
+                eliminarUnaTarea(idTarea);
+                await eliminarTarea(idTarea);
+                Swal.fire("Eliminado", "La tarea se eliminó correctamente", "success");
+            } catch (error) {
+                
+                if (estadoPrevio) agregarNuevaTarea(estadoPrevio);
+                console.error("Algo salió mal al eliminar la tarea", error);
             }
-        }
+        };
 
 
     return {
