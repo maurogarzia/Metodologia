@@ -18,18 +18,16 @@ export const getAllCourses = async () => {
 export const getCourseById = async (id : number) => {
     try {
         const response = await axios.get(`${URL_VITE}/${id}`)
+
+        if(!response.data || Object.keys(response.data).length === 0){
+            return null
+        }
+
         return response.data
     } catch (error) {
         console.log("Ocurrio un error en la llamada a la api", error);
+        return null
     }
 }
 
-// Funcion que muestra los estudiantes de un curso
-export const getAllStudentsByCourse = async (id : number) => {
-    try {
-        const response = await axios.get(`${URL_VITE}?id=${id}`)
-        return response.data[0].estudiantes
-    } catch (error) {
-        console.log("Ocurrio un error en la llamada a los estudiantes", error)
-    }
-}
+

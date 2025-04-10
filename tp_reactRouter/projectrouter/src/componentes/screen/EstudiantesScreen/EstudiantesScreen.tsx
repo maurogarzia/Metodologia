@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { IStudents } from "../../../types/typeStudents"
-import { getAllStudentsByCourse, getCourseById } from "../../../http/api"
-import { Link, useLocation } from "react-router-dom"
+import { getCourseById } from "../../../http/api"
+import { Link, useParams } from "react-router-dom"
 import { ICourses } from "../../../types/typeCourses"
 import { EstudiantesCard } from "../../ui/EstudiantesCard/EstudiantesCard"
 import styles from './EstudiantesScreen.module.css'
@@ -13,9 +13,8 @@ export const EstudiantesScreen = () => {
     const [error, setError] = useState(false)
     const [courseActive, setCourseActive] = useState<ICourses>()
 
-    const location = useLocation()
-    const searchParams = new URLSearchParams(location.search)
-    const courseId = searchParams.get('curso')
+    const { courseId } = useParams()
+    
 
     useEffect(()=>{
 
@@ -24,21 +23,22 @@ export const EstudiantesScreen = () => {
             setError(true)
             return
         }
+        const id = Number(courseId)
+
+        if (isNaN(id)) {
+            setError(true)
+            return
+        }
 
         // Obtengo el curso para usar el nombre
         const obtainData = async() => {
-            const response = await getCourseById(Number(courseId))
+            const response = await getCourseById(id)
             setCourseActive(response)
-        }
-
-        // Obtengo los estudiantes usando query params
-        const obtainDataStudents = async () => {
-            const response = await getAllStudentsByCourse(Number(courseId)) // Le paso el id pasado a numero
-            setStudents(response)
+            setStudents(response.estudiantes)
         }
 
         obtainData()
-        obtainDataStudents()
+        
     },[courseId])
 
     if(error) return <h1>No se encontro el curso !!!</h1> // Si el id no existe retorna el error

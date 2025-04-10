@@ -16,7 +16,7 @@ export const CursoCard: FC<ICursoCard> = ({curso}) => {
             </div>
             <p>Cantidad de alumnos: {curso.estudiantes.length}</p>
             <div className={styles.containnerButton}>
-                <Link to={`/estudiantes?curso=${curso.id}`}>
+                <Link to={`/estudiantes/${curso.id}`}>
                     <button >Ver estudiantes</button>
                 </Link>
                 
