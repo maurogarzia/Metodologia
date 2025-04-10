@@ -1,0 +1,26 @@
+.containerPrincipal{
+    background-color: rgb(12, 10, 10);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.containerButton{
+    position: relative;
+    right: 45%;
+}
+.containerTitle{
+    text-align: center;
+    color: rgb(5, 181, 251);
+    padding: 20px;
+    font-size: 20px;
+}
+.containerCards{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(5, 1fr);    
+    gap: 3vh
+}
+

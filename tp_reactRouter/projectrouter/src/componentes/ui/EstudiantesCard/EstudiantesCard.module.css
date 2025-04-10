@@ -1,0 +1,24 @@
+.containerPrincipal{
+    width: 20vw;
+    height: 10vh;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: rgb(5, 181, 251);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    transition: all 0.3s ease; 
+}
+.containerData{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+}
+.containerPrincipal:hover{
+    transform: scale(1.1); 
+    cursor: pointer;
+}
