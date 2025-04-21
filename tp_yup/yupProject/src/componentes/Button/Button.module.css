@@ -1,0 +1,19 @@
+.containerButton{
+    padding: 5px;
+    height: 5vh;
+    width: 8vw;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+.containerButton:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.containerButton:disabled{
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+

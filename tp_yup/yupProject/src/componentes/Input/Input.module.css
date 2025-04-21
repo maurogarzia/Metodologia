@@ -1,0 +1,42 @@
+.containerPrincipal{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+.containerPrincipal input{
+    margin: 2px;
+    padding: 5px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+.containerPrincipal input:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.errorInput{
+    margin: 2px;
+    padding: 5px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+.errorInput{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    color: red;
+}
+.errorInput input{
+    border: 1px solid red;
+    margin: 2px;
+    padding: 5px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    
+}
+
+.errorInput input:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
